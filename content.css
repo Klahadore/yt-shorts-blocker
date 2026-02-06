@@ -1,0 +1,68 @@
+/* YouTube Shorts & Games Blocker - CSS hiding rules.
+   These apply immediately (before JS runs) to prevent flicker. */
+
+/* === Shorts === */
+
+/* Shorts shelf on homepage and search results */
+ytd-reel-shelf-renderer {
+  display: none !important;
+}
+
+/* Alternative Shorts shelf variant */
+ytd-rich-shelf-renderer[is-shorts] {
+  display: none !important;
+}
+
+/* Shorts tab in the sidebar */
+ytd-guide-entry-renderer:has(a[title="Shorts"]) {
+  display: none !important;
+}
+
+/* Shorts tab in the mini sidebar */
+ytd-mini-guide-entry-renderer:has(a[title="Shorts"]) {
+  display: none !important;
+}
+
+/* Shorts in search results (videos linking to /shorts/) */
+ytd-video-renderer:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
+
+/* Shorts badge overlays on thumbnails */
+ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"] {
+  display: none !important;
+}
+
+/* === Gaming === */
+
+/* Gaming tab in the sidebar */
+ytd-guide-entry-renderer:has(a[title="Gaming"]) {
+  display: none !important;
+}
+
+/* Gaming tab in the mini sidebar */
+ytd-mini-guide-entry-renderer:has(a[title="Gaming"]) {
+  display: none !important;
+}
+
+/* Gaming shelf on homepage */
+ytd-rich-shelf-renderer:has(a[href*="/gaming"]) {
+  display: none !important;
+}
+
+/* === Playables === */
+
+/* Playables tab in the sidebar */
+ytd-guide-entry-renderer:has(a[title="Playables"]) {
+  display: none !important;
+}
+
+/* Playables tab in the mini sidebar */
+ytd-mini-guide-entry-renderer:has(a[title="Playables"]) {
+  display: none !important;
+}
+
+/* Playables shelf on homepage */
+ytd-rich-shelf-renderer:has(a[href*="/playables"]) {
+  display: none !important;
+}
