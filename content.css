@@ -3,13 +3,28 @@
 
 /* === Shorts === */
 
-/* Shorts shelf on homepage and search results */
+/* Shorts shelf on homepage and search results (legacy) */
 ytd-reel-shelf-renderer {
   display: none !important;
 }
 
-/* Alternative Shorts shelf variant */
+/* Alternative Shorts shelf variant (legacy) */
 ytd-rich-shelf-renderer[is-shorts] {
+  display: none !important;
+}
+
+/* New Shorts lockup components (2025+) */
+ytm-shorts-lockup-view-model-v2 {
+  display: none !important;
+}
+
+/* New grid shelf containing Shorts */
+grid-shelf-view-model:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
+
+/* Individual Shorts mixed into homepage recommended grid */
+ytd-rich-item-renderer:has(a[href*="/shorts/"]) {
   display: none !important;
 }
 

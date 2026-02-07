@@ -28,30 +28,43 @@ checkAndBlock();
 
 // Selectors for Shorts and Gaming elements that should be hidden.
 const HIDE_SELECTORS = [
-  // Shorts shelf on homepage and search results
+  // --- Shorts shelves (legacy) ---
   "ytd-reel-shelf-renderer",
-  // Alternative Shorts shelf variant
   "ytd-rich-shelf-renderer[is-shorts]",
-  // Shorts tab in the sidebar/guide
+
+  // --- Shorts shelves (new 2025+ view-model components) ---
+  "ytm-shorts-lockup-view-model-v2",
+  "grid-shelf-view-model:has(a[href*='/shorts/'])",
+
+  // --- Individual Shorts in homepage recommended grid ---
+  "ytd-rich-item-renderer:has(a[href*='/shorts/'])",
+
+  // --- Shorts in search results ---
+  "ytd-video-renderer:has(a[href*='/shorts/'])",
+
+  // --- Shorts tab in the sidebar/guide ---
   "ytd-guide-entry-renderer a[title='Shorts']",
   "ytd-mini-guide-entry-renderer a[title='Shorts']",
-  // Gaming tab in the sidebar/guide
+
+  // --- Gaming tab in the sidebar/guide ---
   "ytd-guide-entry-renderer a[title='Gaming']",
   "ytd-mini-guide-entry-renderer a[title='Gaming']",
-  // Playables tab in the sidebar/guide
+
+  // --- Playables tab in the sidebar/guide ---
   "ytd-guide-entry-renderer a[title='Playables']",
   "ytd-mini-guide-entry-renderer a[title='Playables']",
-  // Shorts chips/badges in navigation
+
+  // --- Shorts/Gaming chips in filter bar ---
   "yt-chip-cloud-chip-renderer:has(yt-formatted-string[title='Shorts'])",
-  // Gaming chips/badges in navigation
   "yt-chip-cloud-chip-renderer:has(yt-formatted-string[title='Gaming'])",
-  // Shorts in search results (inline shorts)
-  "ytd-video-renderer:has(a[href*='/shorts/'])",
-  // Shorts badge overlays
+
+  // --- Shorts badge overlays ---
   "ytd-thumbnail-overlay-time-status-renderer[overlay-style='SHORTS']",
-  // Gaming shelf on homepage
+
+  // --- Gaming shelf on homepage ---
   "ytd-rich-shelf-renderer:has(a[href*='/gaming'])",
-  // Playables shelf on homepage
+
+  // --- Playables shelf on homepage ---
   "ytd-rich-shelf-renderer:has(a[href*='/playables'])",
 ].join(", ");
 
@@ -59,10 +72,13 @@ const HIDE_SELECTORS = [
 const CONTAINER_SELECTORS = [
   "ytd-reel-shelf-renderer",
   "ytd-rich-shelf-renderer",
+  "ytd-rich-item-renderer",
   "ytd-guide-entry-renderer",
   "ytd-mini-guide-entry-renderer",
   "ytd-video-renderer",
   "yt-chip-cloud-chip-renderer",
+  "ytm-shorts-lockup-view-model-v2",
+  "grid-shelf-view-model",
 ].join(", ");
 
 function hideBlockedElements() {
